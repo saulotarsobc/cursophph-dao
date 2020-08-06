@@ -8,35 +8,35 @@ class Usuario {
     private $dtcadastro;
     //============
     public function getIdusuario(){
-        $this->idusuario;
+        return $this->idusuario;
     }
     
     public function setIdusuario($value){
-        return $this->idusuario = $value;
+        $this->idusuario = $value;
     }
     //============
     public function getDeslogin(){
-        $this->deslogin;
+        return $this->deslogin;
     }
 
     public function setDeslogin($value){
-        return $this->deslogin = $value;
+        $this->deslogin = $value;
     }
     //============
     public function getDessenha(){
-        $this->dessenha;
+        return $this->dessenha;
     }
 
     public function setDessenha($value){
-        return $this->dessenha = $value;
+        $this->dessenha = $value;
     }
     //============
     public function getDtcadastro(){
-        $this->dtcadastro;
+        return $this->dtcadastro;
     }
 
     public function setDtcadastro($value){
-        return $this->dtcadastro = $value;
+        $this->dtcadastro = $value;
     }
 
     public function loadById($id){
@@ -54,8 +54,7 @@ class Usuario {
             $this->setIdusuario($row['idusuario']);
             $this->setDeslogin($row['deslogin']);
             $this->setDessenha($row['dessenha']);
-            //$this->setDtcadastro(new DateTime($row['dtcadastro']));
-            $this->setDtcadastro($row['dtcadastro']);
+            $this->setDtcadastro(new DateTime($row['dtcadastro']));
 
         }
 
@@ -67,7 +66,7 @@ class Usuario {
             "idusuario"=>$this->getIdusuario(),
             "deslogin"=>$this->getDeslogin(),
             "dessenha"=>$this->getDessenha(),
-            "dtcadastro"=>$this->getDtcadastro()
+            "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
         ));
 
     }
